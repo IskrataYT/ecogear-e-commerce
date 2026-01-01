@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Color Palette */
+  --color-background: #F4F1EA; /* Raw Canvas */
+  --color-foreground: #2C2B29; /* Primary Text */
+  
+  --color-brand-primary: #2F4838; /* Deep Forest */
+  --color-brand-secondary: #4A6C74; /* Slate Teal */
+  --color-brand-highlight: #C5A065; /* Antique Gold */
+  --color-text-secondary: #8C8A83; /* Secondary Text / Borders */
+
+  /* Typography */
+  --font-serif: var(--font-serif); /* Cinzel - Nature/Sharp */
+  --font-tech: var(--font-tech);   /* Orbitron - Sci-Fi/Geometric */
+  --font-sans: var(--font-sans);   /* Manrope - Neutral reading */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utilities */
+.font-heading-nature {
+  font-family: var(--font-serif);
+}
+
+.font-heading-tech {
+  font-family: var(--font-tech);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
